@@ -1,0 +1,10 @@
+- vars:
+    query: "how many equipment do I have?"
+  assert:
+    - type: javascript
+      value: file://assertions/equipment.js
+- vars:
+    query: "how many shift I have?"
+  assert:
+    - type: javascript
+      value: "output.status === 'pending' || output.status === 'completed'"

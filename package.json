@@ -1,0 +1,15 @@
+{
+  "name": "promptfoo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx promptfoo eval",
+    "view": "npx -y promptfoo view"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "promptfoo": "^0.124.0"
+  }
+}

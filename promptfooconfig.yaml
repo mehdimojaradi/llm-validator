@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+
+description: "Kai"
+
+prompts:
+  - "{{query}}"
+
+providers:
+  - id: "file://providers/api-provider.js"
+
+tests: 
+  - file://tests/equipment.yaml
+
+evaluateOptions:
+  timeoutMs: 45000
+  maxConcurrency: 1
