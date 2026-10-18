@@ -1,10 +1,12 @@
 - vars:
-    query: "how many equipment do I have?"
+    query: convert Two-hundred and sixty-nine to numbers, just show me one stripped result without explanation"
+  provider: "ollama:chat:llama3.2:1b"
   assert:
     - type: javascript
-      value: file://assertions/equipment.js
+      value: file://assertions/equipment.js:getTotalNumberOfEquipment
 - vars:
     query: "how many shift I have?"
   assert:
     - type: javascript
       value: "output.status === 'pending' || output.status === 'completed'"
+

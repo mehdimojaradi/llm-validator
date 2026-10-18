@@ -1,14 +1,18 @@
 const ApiConnector = require('../providers/api-connector')
+const equipmentFixture = require('../fixtures/equipment');
 
 const apiConnector = new ApiConnector();
 
 const getTotalNumberOfEquipment = async (output) => {
-    const data = await apiConnector.request('equipment-atomic?order%5BupdatedAt%5D=desc&isActive=true&pagination=true&page=1&itemsPerPage=20');
+    const data = await apiConnector.request(equipmentFixture.EQUIPMENT_ATOMIC_URL);
     const totalItems = data['hydra:totalItems'];
 
-    const textToSearch = typeof output === 'string' ? output : JSON.stringify(output);
+    const numberOfEquipment = typeof output === 'string' ? output : JSON.stringify(output);
 
-    return textToSearch.includes(String(totalItems));
+    // return textToSearch.includes(String(totalItems));
+    return Number(numberOfEquipment) == totalItems;
 }
 
-module.exports = getTotalNumberOfEquipment;
+module.exports = {
+    getTotalNumberOfEquipment,
+};

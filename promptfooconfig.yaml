@@ -8,7 +8,7 @@ prompts:
 providers:
   - id: "file://providers/api-provider.js"
 
-tests: 
+tests:
   - file://tests/equipment.yaml
 
 evaluateOptions:
