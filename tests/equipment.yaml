@@ -5,7 +5,7 @@
     - type: javascript
       value: file://assertions/equipment.js:getTotalNumberOfEquipment
 - vars:
-    query: "how many shift I have?"
+    query: "what is the status of my request?"
   assert:
     - type: javascript
       value: "output.status === 'pending' || output.status === 'completed'"

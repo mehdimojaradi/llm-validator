@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx promptfoo eval",
-    "view": "npx -y promptfoo view"
+    "view": "npx promptfoo view"
   },
   "author": "",
   "license": "ISC",

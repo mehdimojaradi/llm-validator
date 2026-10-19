@@ -4,13 +4,18 @@ const equipmentFixture = require('../fixtures/equipment');
 const apiConnector = new ApiConnector();
 
 const getTotalNumberOfEquipment = async (output) => {
-    const data = await apiConnector.request(equipmentFixture.EQUIPMENT_ATOMIC_URL);
-    const totalItems = data['hydra:totalItems'];
+    try {
+        const data = await apiConnector.request(equipmentFixture.EQUIPMENT_ATOMIC_URL);
+        const apiResponse = data['hydra:totalItems'];
 
-    const numberOfEquipment = typeof output === 'string' ? output : JSON.stringify(output);
+        const kaiResponse = typeof output === 'string' ? output : JSON.stringify(output);
 
-    // return textToSearch.includes(String(totalItems));
-    return Number(numberOfEquipment) == totalItems;
+        // return textToSearch.includes(String(apiResponse));
+        return Number(kaiResponse) == apiResponse;
+    } catch (error) {
+        console.error('Failed to get total number of equipment:', error);
+        throw error;
+    }
 }
 
 module.exports = {
